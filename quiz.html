@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizMaster Pro</title>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">QuizMaster Pro</h1>
+      <p class="subtitle">Test your knowledge across multiple subjects</p>
+    </div>
+
+    <!-- Setup Section -->
+    <div class="setup-section" id="setupSection">
+      <div class="form-group">
+        <label class="form-label">Select Topics:</label>
+        <div class="topic-grid">
+          <div class="topic-card" onclick="toggleTopic(this, 'Math')">
+            <span class="topic-icon">🔢</span>
+            <input type="checkbox" name="topic" value="Math" id="math">
+            <label for="math">Mathematics</label>
+          </div>
+          <div class="topic-card" onclick="toggleTopic(this, 'Science')">
+            <span class="topic-icon">🧪</span>
+            <input type="checkbox" name="topic" value="Science" id="science">
+            <label for="science">Science</label>
+          </div>
+          <div class="topic-card" onclick="toggleTopic(this, 'History')">
+            <span class="topic-icon">📚</span>
+            <input type="checkbox" name="topic" value="History" id="history">
+            <label for="history">History</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="difficulty">Difficulty Level:</label>
+        <div class="select-wrapper">
+          <select id="difficulty" class="custom-select">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="numQuestions">Number of Questions:</label>
+        <div class="select-wrapper">
+          <select id="numQuestions" class="custom-select">
+            <option value="5">5 Questions</option>
+            <option value="10">10 Questions</option>
+            <option value="15">15 Questions</option>
+            <option value="20">20 Questions</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="start-btn" onclick="generateQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Output Section -->
+    <div class="quiz-section" id="quizSection">
+      <div id="quizContainer"></div>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
